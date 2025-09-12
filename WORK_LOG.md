@@ -1,9 +1,10 @@
 Name: YOUR NAME HERE
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date         |      Time      |                                                                                                                                                                                                                                                                                                                                                                                                  Update |
+|:-------------|:--------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| April 5      |     9-10pm     |                                                                                                                                                                                                                                                                                                                                                              I tried to write abstract, efficient code. |
+| September 11 | 9:40 - 9:55 am |                                                                                                   I started thinking about the code and how I wanted to develop my work. I mainly just went over m notes on how connections work on LinkedIn for example, where you are looking at the second layer. In this circumstance, I want to find the city with the most "mutuals", and build a hospital there. |
+| September 12 | 2:05 - 2:35 pm | I kind of just vibe coded for a bit. But thinking about this conceptually I want to go through the first column of the cities array and if the cities are connected, add them to an array. This way I can find the different clusters of cities. From there, I want each cluster to be connected by n - 1 highways and 1 hospital. That part is much easier than finding the amount of clusters though. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
