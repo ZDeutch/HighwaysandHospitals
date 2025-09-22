@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * Highways & Hospitals
  * A puzzle created by Zach Blick
@@ -16,51 +14,35 @@ public class HighwaysAndHospitals {
      *  hospital access for all citizens in Menlo County.
      */
     public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
-        // Create a boolean array to see if you have visited the city
-        boolean[] visited = new boolean[cities.length + cities[0].length];
-        int totalCost = 0;
+        int[] nodes = new int[n + 1];
+        boolean[] visited = new boolean[n];
 
-        // Create your adjacency list to make a map of the cities and turn it into clusters
-        Graph adjList = new Graph();
+        for (int i = 1; i <= n; i++) {
+            nodes[i] = i;
+        }
 
-        // Create a queue in order to perform BFS on each city
-        Queue<Integer> q = new LinkedList<Integer>();
+        for (int edges = 0; edges < cities.length; edges++) {
+            int root = cities[edges][0];
+            int parent = cities[edges][1];
+            int getParent = find(parent, nodes);
+            int getRoot = find(parent, nodes);
 
-        // For each city
-        for(int i = 0; i < n; i++) {
-            // If you haven't already visited it
-            if (!visited[i]) {
-                // Add it to your queue
-                q.add(i);
-                visited[i] = true;
+            if(getParent != getRoot) {
+                nodes[getRoot] = getParent;
             }
-        }
 
-        // Go through the cities and add them as edges to your BFS search
-        for(int i = 0; i < cities.length; i++) {
-            adjList.addEdge(cities[i][0], cities[i][1]);
-        }
-
-        // Set the first element to be the first vertex
-        adjList.addVertex(q.remove());
-
-        // Begin your BFS Search
-        while(!q.isEmpty()) {
-            adjList.getNeighbors(q.remove());
-            // From here I need to figure out how to find the amount of clusters using the graph class
-            // I also need to know how many cities are in each cluster
-            // I think I am close but I want to go to tutorial and walk through it
 
         }
-
-        // Once I have the amount of clusters and how many are in each I simply have to iterate through each cluster
-        // Then multiply cities - 1 by highway cost
-        // lastly add amount of clusters * hospital cost to the total cost variable
-        // Return cost
-
 
 
         return 0;
+
+    }
+
+    public static int find(int n, int[] parent) {
+        if(parent[n] != n) {
+            parent[n] = find(parent[n],parent);
+        }
+        return parent[n];
     }
 }
-
